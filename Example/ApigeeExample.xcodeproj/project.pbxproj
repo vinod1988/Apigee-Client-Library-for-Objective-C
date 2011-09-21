@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27BFC27D142A54DD004CA304 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC27C142A54DD004CA304 /* UIKit.framework */; };
+		27BFC27F142A54DD004CA304 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC27E142A54DD004CA304 /* Foundation.framework */; };
+		27BFC281142A54DD004CA304 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC280142A54DD004CA304 /* CoreGraphics.framework */; };
+		27BFC287142A54DD004CA304 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27BFC285142A54DD004CA304 /* InfoPlist.strings */; };
+		27BFC289142A54DD004CA304 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC288142A54DD004CA304 /* main.m */; };
+		27BFC28D142A54DD004CA304 /* ApigeeExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC28C142A54DD004CA304 /* ApigeeExampleAppDelegate.m */; };
+		27BFC290142A54DD004CA304 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27BFC28E142A54DD004CA304 /* MainWindow.xib */; };
+		27BFC293142A54DD004CA304 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC292142A54DD004CA304 /* RootViewController.m */; };
+		27BFC296142A54DD004CA304 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27BFC294142A54DD004CA304 /* RootViewController.xib */; };
+		27BFC2B3142A63FD004CA304 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC29F142A63FD004CA304 /* ASIAuthenticationDialog.m */; };
+		27BFC2B6142A63FD004CA304 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2A2142A63FD004CA304 /* ASIDataCompressor.m */; };
+		27BFC2B8142A63FD004CA304 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2A4142A63FD004CA304 /* ASIDataDecompressor.m */; };
+		27BFC2BA142A63FD004CA304 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2A6142A63FD004CA304 /* ASIDownloadCache.m */; };
+		27BFC2BC142A63FD004CA304 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2A8142A63FD004CA304 /* ASIFormDataRequest.m */; };
+		27BFC2BE142A63FD004CA304 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2AA142A63FD004CA304 /* ASIHTTPRequest.m */; };
+		27BFC2C2142A63FD004CA304 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2AE142A63FD004CA304 /* ASIInputStream.m */; };
+		27BFC2C4142A63FD004CA304 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2B0142A63FD004CA304 /* ASINetworkQueue.m */; };
+		27BFC2C9142A6409004CA304 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2C7142A6409004CA304 /* Reachability.m */; };
+		27BFC2CB142A6425004CA304 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC2CA142A6425004CA304 /* SystemConfiguration.framework */; };
+		27BFC2CD142A642F004CA304 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC2CC142A642F004CA304 /* CFNetwork.framework */; };
+		27BFC2CF142A643B004CA304 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC2CE142A643B004CA304 /* MobileCoreServices.framework */; };
+		27BFC2D2142A645A004CA304 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC2D1142A645A004CA304 /* libz.1.2.3.dylib */; };
+		27BFC2D8142A64A2004CA304 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 27BFC2D4142A64A2004CA304 /* CHANGELOG.md */; };
+		27BFC2DA142A64A2004CA304 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2D6142A64A2004CA304 /* JSONKit.m */; };
+		27BFC2DB142A64A2004CA304 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27BFC2D7142A64A2004CA304 /* README.md */; };
+		27BFC2F0142A64DE004CA304 /* ApigeeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2DE142A64DE004CA304 /* ApigeeAPI.m */; };
+		27BFC2F2142A64DE004CA304 /* ApigeeCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E0142A64DE004CA304 /* ApigeeCallback.m */; };
+		27BFC2F4142A64DE004CA304 /* ApigeeConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E2142A64DE004CA304 /* ApigeeConstants.m */; };
+		27BFC2F6142A64DE004CA304 /* ApigeeFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E4142A64DE004CA304 /* ApigeeFormRequest.m */; };
+		27BFC2F8142A64DE004CA304 /* ApigeeKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E6142A64DE004CA304 /* ApigeeKeychain.m */; };
+		27BFC2FA142A64DE004CA304 /* ApigeeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E8142A64DE004CA304 /* ApigeeLoginViewController.m */; };
+		27BFC2FC142A64DE004CA304 /* ApigeeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2EA142A64DE004CA304 /* ApigeeRequest.m */; };
+		27BFC2FE142A64DE004CA304 /* ApigeeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2EC142A64DE004CA304 /* ApigeeResponse.m */; };
+		27BFC300142A64DE004CA304 /* ApigeeUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2EE142A64DE004CA304 /* ApigeeUser.m */; };
+		27BFC302142A6532004CA304 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC301142A6532004CA304 /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		27BFC278142A54DD004CA304 /* ApigeeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApigeeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BFC27C142A54DD004CA304 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		27BFC27E142A54DD004CA304 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		27BFC280142A54DD004CA304 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		27BFC284142A54DD004CA304 /* ApigeeExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ApigeeExample-Info.plist"; sourceTree = "<group>"; };
+		27BFC286142A54DD004CA304 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		27BFC288142A54DD004CA304 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27BFC28A142A54DD004CA304 /* ApigeeExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ApigeeExample-Prefix.pch"; sourceTree = "<group>"; };
+		27BFC28B142A54DD004CA304 /* ApigeeExampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = ApigeeExampleAppDelegate.h; sourceTree = "<group>"; };
+		27BFC28C142A54DD004CA304 /* ApigeeExampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApigeeExampleAppDelegate.m; sourceTree = "<group>"; };
+		27BFC28F142A54DD004CA304 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		27BFC291142A54DD004CA304 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = RootViewController.h; sourceTree = "<group>"; };
+		27BFC292142A54DD004CA304 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		27BFC295142A54DD004CA304 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		27BFC29E142A63FD004CA304 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		27BFC29F142A63FD004CA304 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		27BFC2A0142A63FD004CA304 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		27BFC2A1142A63FD004CA304 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		27BFC2A2142A63FD004CA304 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		27BFC2A3142A63FD004CA304 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		27BFC2A4142A63FD004CA304 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		27BFC2A5142A63FD004CA304 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		27BFC2A6142A63FD004CA304 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		27BFC2A7142A63FD004CA304 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		27BFC2A8142A63FD004CA304 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		27BFC2A9142A63FD004CA304 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		27BFC2AA142A63FD004CA304 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		27BFC2AB142A63FD004CA304 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		27BFC2AC142A63FD004CA304 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		27BFC2AD142A63FD004CA304 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		27BFC2AE142A63FD004CA304 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		27BFC2AF142A63FD004CA304 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		27BFC2B0142A63FD004CA304 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		27BFC2B1142A63FD004CA304 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		27BFC2C6142A6409004CA304 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = Reachability.h; sourceTree = "<group>"; };
+		27BFC2C7142A6409004CA304 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		27BFC2CA142A6425004CA304 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		27BFC2CC142A642F004CA304 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		27BFC2CE142A643B004CA304 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		27BFC2D0142A6446004CA304 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		27BFC2D1142A645A004CA304 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		27BFC2D4142A64A2004CA304 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		27BFC2D5142A64A2004CA304 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = JSONKit.h; sourceTree = "<group>"; };
+		27BFC2D6142A64A2004CA304 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		27BFC2D7142A64A2004CA304 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		27BFC2DD142A64DE004CA304 /* ApigeeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeAPI.h; sourceTree = "<group>"; };
+		27BFC2DE142A64DE004CA304 /* ApigeeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeAPI.m; sourceTree = "<group>"; };
+		27BFC2DF142A64DE004CA304 /* ApigeeCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeCallback.h; sourceTree = "<group>"; };
+		27BFC2E0142A64DE004CA304 /* ApigeeCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeCallback.m; sourceTree = "<group>"; };
+		27BFC2E1142A64DE004CA304 /* ApigeeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeConstants.h; sourceTree = "<group>"; };
+		27BFC2E2142A64DE004CA304 /* ApigeeConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeConstants.m; sourceTree = "<group>"; };
+		27BFC2E3142A64DE004CA304 /* ApigeeFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeFormRequest.h; sourceTree = "<group>"; };
+		27BFC2E4142A64DE004CA304 /* ApigeeFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeFormRequest.m; sourceTree = "<group>"; };
+		27BFC2E5142A64DE004CA304 /* ApigeeKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeKeychain.h; sourceTree = "<group>"; };
+		27BFC2E6142A64DE004CA304 /* ApigeeKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeKeychain.m; sourceTree = "<group>"; };
+		27BFC2E7142A64DE004CA304 /* ApigeeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeLoginViewController.h; sourceTree = "<group>"; };
+		27BFC2E8142A64DE004CA304 /* ApigeeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeLoginViewController.m; sourceTree = "<group>"; };
+		27BFC2E9142A64DE004CA304 /* ApigeeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeRequest.h; sourceTree = "<group>"; };
+		27BFC2EA142A64DE004CA304 /* ApigeeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeRequest.m; sourceTree = "<group>"; };
+		27BFC2EB142A64DE004CA304 /* ApigeeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeResponse.h; sourceTree = "<group>"; };
+		27BFC2EC142A64DE004CA304 /* ApigeeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeResponse.m; sourceTree = "<group>"; };
+		27BFC2ED142A64DE004CA304 /* ApigeeUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeUser.h; sourceTree = "<group>"; };
+		27BFC2EE142A64DE004CA304 /* ApigeeUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeUser.m; sourceTree = "<group>"; };
+		27BFC301142A6532004CA304 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27BFC275142A54DD004CA304 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BFC302142A6532004CA304 /* Security.framework in Frameworks */,
+				27BFC2D2142A645A004CA304 /* libz.1.2.3.dylib in Frameworks */,
+				27BFC281142A54DD004CA304 /* CoreGraphics.framework in Frameworks */,
+				27BFC2CF142A643B004CA304 /* MobileCoreServices.framework in Frameworks */,
+				27BFC2CD142A642F004CA304 /* CFNetwork.framework in Frameworks */,
+				27BFC2CB142A6425004CA304 /* SystemConfiguration.framework in Frameworks */,
+				27BFC27D142A54DD004CA304 /* UIKit.framework in Frameworks */,
+				27BFC27F142A54DD004CA304 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27BFC26D142A54DD004CA304 = {
+			isa = PBXGroup;
+			children = (
+				27BFC29C142A63E6004CA304 /* External */,
+				27BFC282142A54DD004CA304 /* ApigeeExample */,
+				27BFC27B142A54DD004CA304 /* Frameworks */,
+				27BFC279142A54DD004CA304 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27BFC279142A54DD004CA304 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27BFC278142A54DD004CA304 /* ApigeeExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27BFC27B142A54DD004CA304 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27BFC301142A6532004CA304 /* Security.framework */,
+				27BFC2D1142A645A004CA304 /* libz.1.2.3.dylib */,
+				27BFC2D0142A6446004CA304 /* CoreGraphics.framework */,
+				27BFC2CE142A643B004CA304 /* MobileCoreServices.framework */,
+				27BFC2CC142A642F004CA304 /* CFNetwork.framework */,
+				27BFC2CA142A6425004CA304 /* SystemConfiguration.framework */,
+				27BFC27C142A54DD004CA304 /* UIKit.framework */,
+				27BFC27E142A54DD004CA304 /* Foundation.framework */,
+				27BFC280142A54DD004CA304 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27BFC282142A54DD004CA304 /* ApigeeExample */ = {
+			isa = PBXGroup;
+			children = (
+				27BFC28B142A54DD004CA304 /* ApigeeExampleAppDelegate.h */,
+				27BFC28C142A54DD004CA304 /* ApigeeExampleAppDelegate.m */,
+				27BFC28E142A54DD004CA304 /* MainWindow.xib */,
+				27BFC291142A54DD004CA304 /* RootViewController.h */,
+				27BFC292142A54DD004CA304 /* RootViewController.m */,
+				27BFC294142A54DD004CA304 /* RootViewController.xib */,
+				27BFC283142A54DD004CA304 /* Supporting Files */,
+			);
+			path = ApigeeExample;
+			sourceTree = "<group>";
+		};
+		27BFC283142A54DD004CA304 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27BFC284142A54DD004CA304 /* ApigeeExample-Info.plist */,
+				27BFC285142A54DD004CA304 /* InfoPlist.strings */,
+				27BFC288142A54DD004CA304 /* main.m */,
+				27BFC28A142A54DD004CA304 /* ApigeeExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27BFC29C142A63E6004CA304 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				27BFC2DC142A64BF004CA304 /* Apigee Client Library */,
+				27BFC2D3142A648D004CA304 /* JSONKit */,
+				27BFC29D142A63EE004CA304 /* ASIHTTPRequest */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		27BFC29D142A63EE004CA304 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				27BFC2C6142A6409004CA304 /* Reachability.h */,
+				27BFC2C7142A6409004CA304 /* Reachability.m */,
+				27BFC29E142A63FD004CA304 /* ASIAuthenticationDialog.h */,
+				27BFC29F142A63FD004CA304 /* ASIAuthenticationDialog.m */,
+				27BFC2A0142A63FD004CA304 /* ASICacheDelegate.h */,
+				27BFC2A1142A63FD004CA304 /* ASIDataCompressor.h */,
+				27BFC2A2142A63FD004CA304 /* ASIDataCompressor.m */,
+				27BFC2A3142A63FD004CA304 /* ASIDataDecompressor.h */,
+				27BFC2A4142A63FD004CA304 /* ASIDataDecompressor.m */,
+				27BFC2A5142A63FD004CA304 /* ASIDownloadCache.h */,
+				27BFC2A6142A63FD004CA304 /* ASIDownloadCache.m */,
+				27BFC2A7142A63FD004CA304 /* ASIFormDataRequest.h */,
+				27BFC2A8142A63FD004CA304 /* ASIFormDataRequest.m */,
+				27BFC2A9142A63FD004CA304 /* ASIHTTPRequest.h */,
+				27BFC2AA142A63FD004CA304 /* ASIHTTPRequest.m */,
+				27BFC2AB142A63FD004CA304 /* ASIHTTPRequestConfig.h */,
+				27BFC2AC142A63FD004CA304 /* ASIHTTPRequestDelegate.h */,
+				27BFC2AD142A63FD004CA304 /* ASIInputStream.h */,
+				27BFC2AE142A63FD004CA304 /* ASIInputStream.m */,
+				27BFC2AF142A63FD004CA304 /* ASINetworkQueue.h */,
+				27BFC2B0142A63FD004CA304 /* ASINetworkQueue.m */,
+				27BFC2B1142A63FD004CA304 /* ASIProgressDelegate.h */,
+			);
+			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		27BFC2D3142A648D004CA304 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				27BFC2D4142A64A2004CA304 /* CHANGELOG.md */,
+				27BFC2D5142A64A2004CA304 /* JSONKit.h */,
+				27BFC2D6142A64A2004CA304 /* JSONKit.m */,
+				27BFC2D7142A64A2004CA304 /* README.md */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		27BFC2DC142A64BF004CA304 /* Apigee Client Library */ = {
+			isa = PBXGroup;
+			children = (
+				27BFC2DD142A64DE004CA304 /* ApigeeAPI.h */,
+				27BFC2DE142A64DE004CA304 /* ApigeeAPI.m */,
+				27BFC2DF142A64DE004CA304 /* ApigeeCallback.h */,
+				27BFC2E0142A64DE004CA304 /* ApigeeCallback.m */,
+				27BFC2E1142A64DE004CA304 /* ApigeeConstants.h */,
+				27BFC2E2142A64DE004CA304 /* ApigeeConstants.m */,
+				27BFC2E3142A64DE004CA304 /* ApigeeFormRequest.h */,
+				27BFC2E4142A64DE004CA304 /* ApigeeFormRequest.m */,
+				27BFC2E5142A64DE004CA304 /* ApigeeKeychain.h */,
+				27BFC2E6142A64DE004CA304 /* ApigeeKeychain.m */,
+				27BFC2E7142A64DE004CA304 /* ApigeeLoginViewController.h */,
+				27BFC2E8142A64DE004CA304 /* ApigeeLoginViewController.m */,
+				27BFC2E9142A64DE004CA304 /* ApigeeRequest.h */,
+				27BFC2EA142A64DE004CA304 /* ApigeeRequest.m */,
+				27BFC2EB142A64DE004CA304 /* ApigeeResponse.h */,
+				27BFC2EC142A64DE004CA304 /* ApigeeResponse.m */,
+				27BFC2ED142A64DE004CA304 /* ApigeeUser.h */,
+				27BFC2EE142A64DE004CA304 /* ApigeeUser.m */,
+			);
+			name = "Apigee Client Library";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27BFC277142A54DD004CA304 /* ApigeeExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BFC299142A54DD004CA304 /* Build configuration list for PBXNativeTarget "ApigeeExample" */;
+			buildPhases = (
+				27BFC274142A54DD004CA304 /* Sources */,
+				27BFC275142A54DD004CA304 /* Frameworks */,
+				27BFC276142A54DD004CA304 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApigeeExample;
+			productName = ApigeeExample;
+			productReference = 27BFC278142A54DD004CA304 /* ApigeeExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27BFC26F142A54DD004CA304 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 27BFC272142A54DD004CA304 /* Build configuration list for PBXProject "ApigeeExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 27BFC26D142A54DD004CA304;
+			productRefGroup = 27BFC279142A54DD004CA304 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27BFC277142A54DD004CA304 /* ApigeeExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27BFC276142A54DD004CA304 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BFC287142A54DD004CA304 /* InfoPlist.strings in Resources */,
+				27BFC290142A54DD004CA304 /* MainWindow.xib in Resources */,
+				27BFC296142A54DD004CA304 /* RootViewController.xib in Resources */,
+				27BFC2D8142A64A2004CA304 /* CHANGELOG.md in Resources */,
+				27BFC2DB142A64A2004CA304 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27BFC274142A54DD004CA304 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BFC289142A54DD004CA304 /* main.m in Sources */,
+				27BFC28D142A54DD004CA304 /* ApigeeExampleAppDelegate.m in Sources */,
+				27BFC293142A54DD004CA304 /* RootViewController.m in Sources */,
+				27BFC2B3142A63FD004CA304 /* ASIAuthenticationDialog.m in Sources */,
+				27BFC2B6142A63FD004CA304 /* ASIDataCompressor.m in Sources */,
+				27BFC2B8142A63FD004CA304 /* ASIDataDecompressor.m in Sources */,
+				27BFC2BA142A63FD004CA304 /* ASIDownloadCache.m in Sources */,
+				27BFC2BC142A63FD004CA304 /* ASIFormDataRequest.m in Sources */,
+				27BFC2BE142A63FD004CA304 /* ASIHTTPRequest.m in Sources */,
+				27BFC2C2142A63FD004CA304 /* ASIInputStream.m in Sources */,
+				27BFC2C4142A63FD004CA304 /* ASINetworkQueue.m in Sources */,
+				27BFC2C9142A6409004CA304 /* Reachability.m in Sources */,
+				27BFC2DA142A64A2004CA304 /* JSONKit.m in Sources */,
+				27BFC2F0142A64DE004CA304 /* ApigeeAPI.m in Sources */,
+				27BFC2F2142A64DE004CA304 /* ApigeeCallback.m in Sources */,
+				27BFC2F4142A64DE004CA304 /* ApigeeConstants.m in Sources */,
+				27BFC2F6142A64DE004CA304 /* ApigeeFormRequest.m in Sources */,
+				27BFC2F8142A64DE004CA304 /* ApigeeKeychain.m in Sources */,
+				27BFC2FA142A64DE004CA304 /* ApigeeLoginViewController.m in Sources */,
+				27BFC2FC142A64DE004CA304 /* ApigeeRequest.m in Sources */,
+				27BFC2FE142A64DE004CA304 /* ApigeeResponse.m in Sources */,
+				27BFC300142A64DE004CA304 /* ApigeeUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		27BFC285142A54DD004CA304 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BFC286142A54DD004CA304 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		27BFC28E142A54DD004CA304 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BFC28F142A54DD004CA304 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		27BFC294142A54DD004CA304 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BFC295142A54DD004CA304 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27BFC297142A54DD004CA304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		27BFC298142A54DD004CA304 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27BFC29A142A54DD004CA304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ApigeeExample/ApigeeExample-Prefix.pch";
+				INFOPLIST_FILE = "ApigeeExample/ApigeeExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		27BFC29B142A54DD004CA304 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ApigeeExample/ApigeeExample-Prefix.pch";
+				INFOPLIST_FILE = "ApigeeExample/ApigeeExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27BFC272142A54DD004CA304 /* Build configuration list for PBXProject "ApigeeExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BFC297142A54DD004CA304 /* Debug */,
+				27BFC298142A54DD004CA304 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BFC299142A54DD004CA304 /* Build configuration list for PBXNativeTarget "ApigeeExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BFC29A142A54DD004CA304 /* Debug */,
+				27BFC29B142A54DD004CA304 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27BFC26F142A54DD004CA304 /* Project object */;
+}
