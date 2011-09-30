@@ -1,13 +1,15 @@
 //
 //  ApigeeLoginViewController.m
-//  ApigeePrototype
+//  Apigee Client Library for Objective-C
 //
 //  Copyright 2011 Apigee. All rights reserved.
 //
 
-#import "ApigeeLoginViewController.h"
+#if TARGET_OS_IPHONE
 
-@implementation ApigeeLoginViewController
+#import "APGLoginViewController.h"
+
+@implementation APGLoginViewController
 
 @synthesize url, webView;
 
@@ -15,7 +17,6 @@
     self = [super init];
     if (self) {
         self.url = urlForWebView;
-        NSLog(@"\n\n\n\n\n\n\n%@\n\n\n\n\n\n", self.url);
     }
     return self;
 }
@@ -42,3 +43,5 @@
 }
 
 @end
+
+#endif

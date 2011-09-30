@@ -1,10 +1,10 @@
 //
-//  ApigeeConstants.m
-//  ApigeePrototype
+//  APGConstants.m
+//  Apigee Client Library for Objective-C
 //
 //  Copyright 2011 Apigee. All rights reserved.
 //
 
-#import "ApigeeConstants.h"
+#import "APGConstants.h"
 
 NSString* const ApigeeProxyURLString = @"http://apigee.com";

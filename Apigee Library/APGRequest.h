@@ -1,25 +1,23 @@
 //
 //  ApigeeRequest.h
-//  ApigeePrototype
+//  Apigee Client Library for Objective-C
 //
 //  Copyright 2011 Apigee. All rights reserved.
 //
 
 #import "ASIHTTPRequest.h"
 
-@class ApigeeCallback, ApigeeUser;
+@class APGUser;
 
-@interface ApigeeRequest : ASIHTTPRequest {
-}
+@interface APGRequest : ASIHTTPRequest
 
 @property (nonatomic, retain) NSURL *targetURL;
 @property (nonatomic, retain) NSString *targetVerb;
 @property (nonatomic, retain) NSDictionary *targetHeaders;
 @property (nonatomic, retain) NSData *targetBody;
-@property (nonatomic, retain) ApigeeCallback *callback;
 
-+ (ApigeeRequest *)request:(NSURL *)url verb:(NSString *)verb headers:(NSDictionary *)headers body:(NSData *)body;
-- (ApigeeUser *)appUser;
++ (APGRequest *)request:(NSURL *)url verb:(NSString *)verb headers:(NSDictionary *)headers body:(NSData *)body;
+- (APGUser *)appUser;
 - (BOOL)isSuccess;
 
 

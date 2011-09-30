@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface ApigeeKeychain : NSObject {
+@interface APGKeychain : NSObject {
 }
 
 + (BOOL)setString:(NSString *)string forKey:(NSString *)key;

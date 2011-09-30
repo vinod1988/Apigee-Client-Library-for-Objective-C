@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272F76111435940200633B8E /* APGClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F76031435940200633B8E /* APGClient.m */; };
+		272F76131435940200633B8E /* APGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F76051435940200633B8E /* APGConstants.m */; };
+		272F76151435940200633B8E /* APGFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F76071435940200633B8E /* APGFormRequest.m */; };
+		272F76171435940200633B8E /* APGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F76091435940200633B8E /* APGKeychain.m */; };
+		272F76191435940200633B8E /* APGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F760B1435940200633B8E /* APGLoginViewController.m */; };
+		272F761B1435940200633B8E /* APGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F760D1435940200633B8E /* APGRequest.m */; };
+		272F761D1435940200633B8E /* APGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F760F1435940200633B8E /* APGUser.m */; };
 		27BFC27D142A54DD004CA304 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC27C142A54DD004CA304 /* UIKit.framework */; };
 		27BFC27F142A54DD004CA304 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC27E142A54DD004CA304 /* Foundation.framework */; };
 		27BFC281142A54DD004CA304 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC280142A54DD004CA304 /* CoreGraphics.framework */; };
@@ -32,19 +39,24 @@
 		27BFC2D8142A64A2004CA304 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 27BFC2D4142A64A2004CA304 /* CHANGELOG.md */; };
 		27BFC2DA142A64A2004CA304 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2D6142A64A2004CA304 /* JSONKit.m */; };
 		27BFC2DB142A64A2004CA304 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27BFC2D7142A64A2004CA304 /* README.md */; };
-		27BFC2F0142A64DE004CA304 /* ApigeeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2DE142A64DE004CA304 /* ApigeeAPI.m */; };
-		27BFC2F2142A64DE004CA304 /* ApigeeCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E0142A64DE004CA304 /* ApigeeCallback.m */; };
-		27BFC2F4142A64DE004CA304 /* ApigeeConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E2142A64DE004CA304 /* ApigeeConstants.m */; };
-		27BFC2F6142A64DE004CA304 /* ApigeeFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E4142A64DE004CA304 /* ApigeeFormRequest.m */; };
-		27BFC2F8142A64DE004CA304 /* ApigeeKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E6142A64DE004CA304 /* ApigeeKeychain.m */; };
-		27BFC2FA142A64DE004CA304 /* ApigeeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2E8142A64DE004CA304 /* ApigeeLoginViewController.m */; };
-		27BFC2FC142A64DE004CA304 /* ApigeeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2EA142A64DE004CA304 /* ApigeeRequest.m */; };
-		27BFC2FE142A64DE004CA304 /* ApigeeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2EC142A64DE004CA304 /* ApigeeResponse.m */; };
-		27BFC300142A64DE004CA304 /* ApigeeUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFC2EE142A64DE004CA304 /* ApigeeUser.m */; };
 		27BFC302142A6532004CA304 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BFC301142A6532004CA304 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272F76021435940200633B8E /* APGClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGClient.h; path = "../Apigee Library/APGClient.h"; sourceTree = "<group>"; };
+		272F76031435940200633B8E /* APGClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGClient.m; path = "../Apigee Library/APGClient.m"; sourceTree = "<group>"; };
+		272F76041435940200633B8E /* APGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGConstants.h; path = "../Apigee Library/APGConstants.h"; sourceTree = "<group>"; };
+		272F76051435940200633B8E /* APGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGConstants.m; path = "../Apigee Library/APGConstants.m"; sourceTree = "<group>"; };
+		272F76061435940200633B8E /* APGFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGFormRequest.h; path = "../Apigee Library/APGFormRequest.h"; sourceTree = "<group>"; };
+		272F76071435940200633B8E /* APGFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGFormRequest.m; path = "../Apigee Library/APGFormRequest.m"; sourceTree = "<group>"; };
+		272F76081435940200633B8E /* APGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGKeychain.h; path = "../Apigee Library/APGKeychain.h"; sourceTree = "<group>"; };
+		272F76091435940200633B8E /* APGKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGKeychain.m; path = "../Apigee Library/APGKeychain.m"; sourceTree = "<group>"; };
+		272F760A1435940200633B8E /* APGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGLoginViewController.h; path = "../Apigee Library/APGLoginViewController.h"; sourceTree = "<group>"; };
+		272F760B1435940200633B8E /* APGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGLoginViewController.m; path = "../Apigee Library/APGLoginViewController.m"; sourceTree = "<group>"; };
+		272F760C1435940200633B8E /* APGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGRequest.h; path = "../Apigee Library/APGRequest.h"; sourceTree = "<group>"; };
+		272F760D1435940200633B8E /* APGRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGRequest.m; path = "../Apigee Library/APGRequest.m"; sourceTree = "<group>"; };
+		272F760E1435940200633B8E /* APGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGUser.h; path = "../Apigee Library/APGUser.h"; sourceTree = "<group>"; };
+		272F760F1435940200633B8E /* APGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGUser.m; path = "../Apigee Library/APGUser.m"; sourceTree = "<group>"; };
 		27BFC278142A54DD004CA304 /* ApigeeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApigeeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BFC27C142A54DD004CA304 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27BFC27E142A54DD004CA304 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,24 +102,6 @@
 		27BFC2D5142A64A2004CA304 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = JSONKit.h; sourceTree = "<group>"; };
 		27BFC2D6142A64A2004CA304 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		27BFC2D7142A64A2004CA304 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		27BFC2DD142A64DE004CA304 /* ApigeeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeAPI.h; sourceTree = "<group>"; };
-		27BFC2DE142A64DE004CA304 /* ApigeeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeAPI.m; sourceTree = "<group>"; };
-		27BFC2DF142A64DE004CA304 /* ApigeeCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeCallback.h; sourceTree = "<group>"; };
-		27BFC2E0142A64DE004CA304 /* ApigeeCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeCallback.m; sourceTree = "<group>"; };
-		27BFC2E1142A64DE004CA304 /* ApigeeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeConstants.h; sourceTree = "<group>"; };
-		27BFC2E2142A64DE004CA304 /* ApigeeConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeConstants.m; sourceTree = "<group>"; };
-		27BFC2E3142A64DE004CA304 /* ApigeeFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeFormRequest.h; sourceTree = "<group>"; };
-		27BFC2E4142A64DE004CA304 /* ApigeeFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeFormRequest.m; sourceTree = "<group>"; };
-		27BFC2E5142A64DE004CA304 /* ApigeeKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeKeychain.h; sourceTree = "<group>"; };
-		27BFC2E6142A64DE004CA304 /* ApigeeKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeKeychain.m; sourceTree = "<group>"; };
-		27BFC2E7142A64DE004CA304 /* ApigeeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeLoginViewController.h; sourceTree = "<group>"; };
-		27BFC2E8142A64DE004CA304 /* ApigeeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeLoginViewController.m; sourceTree = "<group>"; };
-		27BFC2E9142A64DE004CA304 /* ApigeeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeRequest.h; sourceTree = "<group>"; };
-		27BFC2EA142A64DE004CA304 /* ApigeeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeRequest.m; sourceTree = "<group>"; };
-		27BFC2EB142A64DE004CA304 /* ApigeeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeResponse.h; sourceTree = "<group>"; };
-		27BFC2EC142A64DE004CA304 /* ApigeeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeResponse.m; sourceTree = "<group>"; };
-		27BFC2ED142A64DE004CA304 /* ApigeeUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ApigeeUser.h; sourceTree = "<group>"; };
-		27BFC2EE142A64DE004CA304 /* ApigeeUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApigeeUser.m; sourceTree = "<group>"; };
 		27BFC301142A6532004CA304 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -242,24 +236,20 @@
 		27BFC2DC142A64BF004CA304 /* Apigee Client Library */ = {
 			isa = PBXGroup;
 			children = (
-				27BFC2DD142A64DE004CA304 /* ApigeeAPI.h */,
-				27BFC2DE142A64DE004CA304 /* ApigeeAPI.m */,
-				27BFC2DF142A64DE004CA304 /* ApigeeCallback.h */,
-				27BFC2E0142A64DE004CA304 /* ApigeeCallback.m */,
-				27BFC2E1142A64DE004CA304 /* ApigeeConstants.h */,
-				27BFC2E2142A64DE004CA304 /* ApigeeConstants.m */,
-				27BFC2E3142A64DE004CA304 /* ApigeeFormRequest.h */,
-				27BFC2E4142A64DE004CA304 /* ApigeeFormRequest.m */,
-				27BFC2E5142A64DE004CA304 /* ApigeeKeychain.h */,
-				27BFC2E6142A64DE004CA304 /* ApigeeKeychain.m */,
-				27BFC2E7142A64DE004CA304 /* ApigeeLoginViewController.h */,
-				27BFC2E8142A64DE004CA304 /* ApigeeLoginViewController.m */,
-				27BFC2E9142A64DE004CA304 /* ApigeeRequest.h */,
-				27BFC2EA142A64DE004CA304 /* ApigeeRequest.m */,
-				27BFC2EB142A64DE004CA304 /* ApigeeResponse.h */,
-				27BFC2EC142A64DE004CA304 /* ApigeeResponse.m */,
-				27BFC2ED142A64DE004CA304 /* ApigeeUser.h */,
-				27BFC2EE142A64DE004CA304 /* ApigeeUser.m */,
+				272F76021435940200633B8E /* APGClient.h */,
+				272F76031435940200633B8E /* APGClient.m */,
+				272F76041435940200633B8E /* APGConstants.h */,
+				272F76051435940200633B8E /* APGConstants.m */,
+				272F76061435940200633B8E /* APGFormRequest.h */,
+				272F76071435940200633B8E /* APGFormRequest.m */,
+				272F76081435940200633B8E /* APGKeychain.h */,
+				272F76091435940200633B8E /* APGKeychain.m */,
+				272F760A1435940200633B8E /* APGLoginViewController.h */,
+				272F760B1435940200633B8E /* APGLoginViewController.m */,
+				272F760C1435940200633B8E /* APGRequest.h */,
+				272F760D1435940200633B8E /* APGRequest.m */,
+				272F760E1435940200633B8E /* APGUser.h */,
+				272F760F1435940200633B8E /* APGUser.m */,
 			);
 			name = "Apigee Client Library";
 			sourceTree = "<group>";
@@ -342,15 +332,13 @@
 				27BFC2C4142A63FD004CA304 /* ASINetworkQueue.m in Sources */,
 				27BFC2C9142A6409004CA304 /* Reachability.m in Sources */,
 				27BFC2DA142A64A2004CA304 /* JSONKit.m in Sources */,
-				27BFC2F0142A64DE004CA304 /* ApigeeAPI.m in Sources */,
-				27BFC2F2142A64DE004CA304 /* ApigeeCallback.m in Sources */,
-				27BFC2F4142A64DE004CA304 /* ApigeeConstants.m in Sources */,
-				27BFC2F6142A64DE004CA304 /* ApigeeFormRequest.m in Sources */,
-				27BFC2F8142A64DE004CA304 /* ApigeeKeychain.m in Sources */,
-				27BFC2FA142A64DE004CA304 /* ApigeeLoginViewController.m in Sources */,
-				27BFC2FC142A64DE004CA304 /* ApigeeRequest.m in Sources */,
-				27BFC2FE142A64DE004CA304 /* ApigeeResponse.m in Sources */,
-				27BFC300142A64DE004CA304 /* ApigeeUser.m in Sources */,
+				272F76111435940200633B8E /* APGClient.m in Sources */,
+				272F76131435940200633B8E /* APGConstants.m in Sources */,
+				272F76151435940200633B8E /* APGFormRequest.m in Sources */,
+				272F76171435940200633B8E /* APGKeychain.m in Sources */,
+				272F76191435940200633B8E /* APGLoginViewController.m in Sources */,
+				272F761B1435940200633B8E /* APGRequest.m in Sources */,
+				272F761D1435940200633B8E /* APGUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,22 +24,33 @@
 
 - (void)createAppUser {
     
-    [self.api createAppUser:@"mike68" password:@"test3210" success:^(ApigeeRequest *request) {
+    [self.api createAppUser:@"demo2" password:@"test2" completion:^(NSHTTPURLResponse *response, NSData *data, NSError *error) {
         
-        ApigeeUser *user = [request appUser];
+        NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"create user response: %@", responseString);
         
-        // persist smart key to use later        
-        [ApigeeKeychain setString:user.smartKey forKey:@"smartKey"];
-        self.api.smartKey = user.smartKey;
+        if ([response statusCode] == 200) {
+            
+            APGUser *user = [[APGUser alloc] initWithJSONDict:[data objectFromJSONData]];
+            
+            // persist smart key to use later        
+            [APGKeychain setString:user.smartKey forKey:@"smartKey"];
+            self.api.smartKey = user.smartKey;
+            
+            // present oauth login view
+            [self.api presentLoginForProvider:@"twitter" fromViewController:self];
+            
+            // app will handle custom URL from twitter login in app delegate
+            
+            [user release];
+            
+        } else {
+            
+            NSLog(@"create user response: %i: %@", [response statusCode], responseString);
+            
+        }
         
-        // present oauth login view
-        [self.api presentLoginForProvider:@"twitter" fromViewController:self];
-        
-        // app will handle custom URL from twitter login in ApigeePrototypeAppDelegate
-        
-    } failure:^(ApigeeRequest *request) {
-        
-        NSLog(@"create user response: %i: %@", [request responseStatusCode], [request responseString]);
+        [responseString release];
         
     }];
     
@@ -48,16 +59,23 @@
 - (void)getTweetsFromAPI {
     
     // get the twitter home timeline
-    [self.api get:@"/twitter/1/statuses/home_timeline.json" success:^(ApigeeRequest *timelineRequest) {            
+    [self.api get:@"/twitter/1/statuses/home_timeline.json" completion:^(NSHTTPURLResponse *response, NSData *data, NSError *error) {
         
-        self.tweets = [[timelineRequest responseString] objectFromJSONString];
-        [self.tableView reloadData];
+        if ([response statusCode] == 200) {
+            
+            self.tweets = [data objectFromJSONData];
+            [self.tableView reloadData];
+            
+        } else {
+            
+            [self alert:@"There was a problem loading the Twitter timeline."];
+            NSLog(@"timeline request: %i %@", [response statusCode], data);
+            
+        }
         
-    } failure:^(ApigeeRequest *timelineRequest) {
-        
-        [self alert:@"There was a problem loading the Twitter timeline."];
         
     }];
+    
 }
 
 - (void)loadTweets {
@@ -68,9 +86,9 @@
     // show the "Calling Twitter API..." message
     [self.tableView reloadData];
     
-    self.api = [ApigeeAPI sharedAPI:@"sourcesample" username:@"demo2" password:@"test2"];
+    self.api = [APGClient sharedAPI:@"sourcesample" username:@"demo2" password:@"test2"];
     
-    NSString *smartKey = [ApigeeKeychain stringForKey:@"smartKey"];
+    NSString *smartKey = [APGKeychain stringForKey:@"smartKey"];
     
     if (smartKey) {
         
@@ -82,17 +100,22 @@
     } else {
         
         // the first time you run it, you won't have a smartKey, so you need to get it from the API
-        [self.api loadMySmartKey:^(ApigeeRequest *smartKeyRequest) {
+        [self.api loadMySmartKey:^(NSHTTPURLResponse *response, NSData *data, NSError *error) {
             
-            // the API object now has a smartKey, so let's persist it
-            [ApigeeKeychain setString:self.api.smartKey forKey:@"smartKey"];
-            
-            // now we can get the timeline
-            [self getTweetsFromAPI];
-            
-        } failure:^(ApigeeRequest *smartKeyRequest) {
-            
-            [self alert:@"There was a problem loading your smartKey."];
+            if ([response statusCode] == 200) {
+                
+                // the API object now has a smartKey, so let's persist it
+                [APGKeychain setString:self.api.smartKey forKey:@"smartKey"];
+                
+                // now we can get the timeline
+                [self getTweetsFromAPI];
+                
+            } else {
+                
+                NSLog(@"smartKey request: %i", [response statusCode]);
+                [self alert:@"There was a problem loading your smartKey."];
+                
+            }
             
         }];
         
@@ -134,7 +157,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Twitter Timeline";
-
+    
     // add a refresh button to the nav bar
     UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadTweets)];
     self.navigationItem.leftBarButtonItem = refresh;
@@ -169,7 +192,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -219,7 +242,7 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-
+    
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }

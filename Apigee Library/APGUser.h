@@ -1,13 +1,13 @@
 //
 //  ApigeeUser.h
-//  ApigeePrototype
+//  Apigee Client Library for Objective-C
 //
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Apigee. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface ApigeeUser : NSObject
+@interface APGUser : NSObject
 
 @property (nonatomic, retain) NSString *appUserId;
 @property (nonatomic, retain) NSString *username;

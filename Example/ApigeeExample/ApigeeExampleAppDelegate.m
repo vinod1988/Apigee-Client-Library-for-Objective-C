@@ -2,12 +2,11 @@
 //  ApigeeExampleAppDelegate.m
 //  ApigeeExample
 //
-//  Created by Michael Mayo on 9/21/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Apigee. All rights reserved.
 //
 
 #import "ApigeeExampleAppDelegate.h"
-#import "ApigeeAPI.h"
+#import "APGClient.h"
 
 @implementation ApigeeExampleAppDelegate
 
@@ -26,7 +25,7 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     
-    ApigeeAPI *api = [ApigeeAPI sharedAPI:@"sourcesample"];
+    APGClient *api = [APGClient sharedAPI:@"sourcesample"];
     [api.loginViewController dismissModalViewControllerAnimated:YES];
     
     return YES;

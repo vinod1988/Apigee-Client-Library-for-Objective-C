@@ -1,7 +1,7 @@
-#import "ApigeeKeychain.h"
+#import "APGKeychain.h"
 #import <Security/Security.h>
 
-@implementation ApigeeKeychain
+@implementation APGKeychain
 
 + (NSString *)appName {    
 	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
@@ -19,7 +19,7 @@
         return NO;
     }
     
-    key = [NSString stringWithFormat:@"%@ - %@", [ApigeeKeychain appName], key];
+    key = [NSString stringWithFormat:@"%@ - %@", [APGKeychain appName], key];
     
 	// First check if it already exists, by creating a search dictionary and requesting that 
     // nothing be returned, and performing the search anyway.
@@ -49,7 +49,7 @@
 		return NO;
 	}
     
-    key = [NSString stringWithFormat:@"%@ - %@", [ApigeeKeychain appName], key];
+    key = [NSString stringWithFormat:@"%@ - %@", [APGKeychain appName], key];
     
 	// First check if it already exists, by creating a search dictionary and requesting that 
     // nothing be returned, and performing the search anyway.
@@ -89,7 +89,7 @@
 
 + (NSString *)stringForKey:(NSString *)key {
 
-    key = [NSString stringWithFormat:@"%@ - %@", [ApigeeKeychain appName], key];
+    key = [NSString stringWithFormat:@"%@ - %@", [APGKeychain appName], key];
     
 	NSMutableDictionary *existsQueryDictionary = [NSMutableDictionary dictionary];
 	
