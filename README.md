@@ -1,11 +1,9 @@
 Installation
 ------------
 
-1. Add ASIHTTPRequest to your app.  ASIHTTPRequest is available at https://github.com/pokeb/asi-http-request.  Installation instructions are at http://allseeing-i.com/ASIHTTPRequest/Setup-instructions.
+1. Add Security.framework to your project
 
-2. Add Security.framework to your project
-
-3. Copy all files in the Apigee Library folder into your project.
+2. Copy all files in the Apigee Library folder into your project.
 
 Usage
 -----

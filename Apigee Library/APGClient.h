@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import "APGUser.h"
-#import "APGRequest.h"
 #import "APGKeychain.h"
 #import "APGConstants.h"
 
@@ -16,9 +15,6 @@
 #if TARGET_OS_IPHONE
 @class APGLoginViewController;
 #endif
-
-typedef void (^ApigeeRequestBlock)(APGRequest *request);
-typedef void (^ApigeeResponseBlock)(APGResponse *response);
 
 typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSError *error);
 
@@ -67,13 +63,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 
 - (NSURL *)authURLForProvider:(NSString *)provider callbackURL:(NSURL *)callbackURL;
 
-- (void)createAppUser:(NSString *)username password:(NSString *)password success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)createAppUser:(NSString *)username password:(NSString *)password completion:(APGResponseBlock)completionBlock;
-
-- (void)call:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
-
-
-// new NSURLRequest/NSURLConnection style
 
 - (NSMutableURLRequest *)request:(NSString *)path verb:(NSString *)verb;
 - (NSMutableURLRequest *)request:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers;
@@ -94,7 +84,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)get:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)get:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -111,7 +100,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)get:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)get:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -128,7 +116,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)get:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)get:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -143,7 +130,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)get:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)get:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -157,7 +143,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)put:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)put:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -174,7 +159,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)put:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)put:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -192,7 +176,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)put:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)put:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -207,7 +190,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)put:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)put:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -221,7 +203,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)post:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)post:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -237,7 +218,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)post:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)post:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -254,25 +234,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)post:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)post:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
-
-/**
- Performs an HTTP POST request to the specified path on the Apigee proxy
- @param path Path to the resource
- @param headers Dictionary of HTTP headers where the keys are the header names and
- the values are the header values
- @param postParams Dictionary of form data where the keys are the form fields and
- the values are the form values
- 
- <b>Example Usage</b>
-    [[api post:@"/statuses/public_timeline.json"] success:^(ApigeeResponse *response) {
-        // handle success
-    } failure:^(ApigeeResponse *response) {
-        // handle failure
-    }];
- */
-- (void)post:(NSString *)path headers:(NSDictionary *)headers postParams:(NSDictionary *)postParams success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 
 /**
  Performs an HTTP POST request to the specified path on the Apigee proxy
@@ -286,23 +248,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)post:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)post:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
-
-/**
- Performs an HTTP POST request to the specified path on the Apigee proxy
- @param path Path to the resource
- @param postParams Dictionary of form data where the keys are the form fields and
- the values are the form values
- 
- <b>Example Usage</b>
-    [[api post:@"/statuses/public_timeline.json"] success:^(ApigeeResponse *response) {
-        // handle success
-    } failure:^(ApigeeResponse *response) {
-        // handle failure
-    }];
- */
-- (void)post:(NSString *)path postParams:(NSDictionary *)postParams success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 
 /**
  Performs an HTTP DELETE request to the specified path on the Apigee proxy
@@ -315,7 +261,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)delete:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)delete:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -331,7 +276,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)delete:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)delete:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -348,7 +292,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)delete:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)delete:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -363,7 +306,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)delete:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)delete:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -377,7 +319,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)head:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)head:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -393,7 +334,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)head:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)head:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -411,7 +351,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)head:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)head:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -426,7 +365,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)head:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)head:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -441,7 +379,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)call:(NSString *)path verb:(NSString *)verb success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)call:(NSString *)path verb:(NSString *)verb completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -458,43 +395,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
-
-/**
- Performs an HTTP request to the specified path on the Apigee proxy
- @param path Path to the resource
- @param verb The HTTP method (e.g. GET, PUT, POST, etc.)
- @param postParams Dictionary of form data where the keys are the form fields and
- the values are the form values
- 
- <b>Example Usage</b>
-    [[api post:@"/statuses/public_timeline.json"] success:^(ApigeeResponse *response) {
-        // handle success
-    } failure:^(ApigeeResponse *response) {
-        // handle failure
-    }];
- */
-- (void)call:(NSString *)path verb:(NSString *)verb postParams:(NSDictionary *)postParams success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
-
-
-/**
- Performs an HTTP request to the specified path on the Apigee proxy
- @param path Path to the resource
- @param verb The HTTP method (e.g. GET, PUT, POST, etc.)
- @param headers Dictionary of HTTP headers where the keys are the header names and
- the values are the header values
- @param postParams Dictionary of form data where the keys are the form fields and
- the values are the form values
- 
- <b>Example Usage</b>
-    [[api post:@"/statuses/public_timeline.json"] success:^(ApigeeResponse *response) {
-        // handle success
-    } failure:^(ApigeeResponse *response) {
-        // handle failure
-    }];
- */
-- (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers postParams:(NSDictionary *)postParams success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 
 /**
  Performs an HTTP request to the specified path on the Apigee proxy
@@ -509,7 +410,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }]; 
  */
-- (void)call:(NSString *)path verb:(NSString *)verb body:(NSData *)body success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)call:(NSString *)path verb:(NSString *)verb body:(NSData *)body completion:(APGResponseBlock)completionBlock;
 
 /**
@@ -527,7 +427,6 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
         // handle failure
     }];
  */
-- (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers body:(NSData *)body success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock;
 - (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers body:(NSData *)body completion:(APGResponseBlock)completionBlock;
 
 @end

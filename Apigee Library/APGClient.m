@@ -6,8 +6,6 @@
 //
 
 #import "APGClient.h"
-#import "APGRequest.h"
-#import "APGFormRequest.h"
 #import "APGLoginViewController.h"
 #import "JSONKit.h"
 
@@ -177,18 +175,6 @@ static char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012
 
 #endif
 
-- (void)createAppUser:(NSString *)u password:(NSString *)p success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-
-    NSString *body = [NSString stringWithFormat:@"{ \"userName\": \"%@\", \"password\": \"%@\" }", u, p];    
-    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
-
-    [self post:@"/users.json" body:data success:^(APGRequest *request) {
-        successBlock(request);
-    } failure:^(APGRequest *request) {
-        failureBlock(request);
-    }];    
-}
-
 - (void)createAppUser:(NSString *)u password:(NSString *)p completion:(APGResponseBlock)completionBlock {
     
     NSString *body = [NSString stringWithFormat:@"{ \"userName\": \"%@\", \"password\": \"%@\" }", u, p];    
@@ -200,208 +186,96 @@ static char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012
 }
 
 
-- (void)get:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path success:successBlock failure:failureBlock];
-}
-
 - (void)get:(NSString *)path completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgGET headers:nil body:nil completion:completionBlock];
-}
-
-- (void)get:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgGET headers:headers success:successBlock failure:failureBlock];
 }
 
 - (void)get:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgGET headers:headers body:nil completion:completionBlock];
 }
 
-- (void)get:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgGET headers:headers body:data success:successBlock failure:failureBlock];
-}
-
 - (void)get:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgGET headers:headers body:data completion:completionBlock];
-}
-
-- (void)get:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgGET headers:nil body:data success:successBlock failure:failureBlock];
 }
 
 - (void)get:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgGET headers:nil body:data completion:completionBlock];
 }
 
-- (void)put:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPUT success:successBlock failure:failureBlock];
-}
-
 - (void)put:(NSString *)path completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgPUT headers:nil body:nil completion:completionBlock];
-}
-
-- (void)put:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPUT headers:headers success:successBlock failure:failureBlock];
 }
 
 - (void)put:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgPUT headers:headers body:nil completion:completionBlock];
 }
 
-- (void)put:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPUT headers:headers body:data success:successBlock failure:failureBlock];
-}
-
 - (void)put:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgPUT headers:headers body:data completion:completionBlock];
-}
-
-- (void)put:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPUT headers:nil body:data success:successBlock failure:failureBlock];
 }
 
 - (void)put:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgPUT headers:nil body:data completion:completionBlock];
 }
 
-- (void)post:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPOST success:successBlock failure:failureBlock];
-}
-
 - (void)post:(NSString *)path completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgPOST headers:nil body:nil completion:completionBlock];
-}
-
-- (void)post:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPOST headers:headers success:successBlock failure:failureBlock];
 }
 
 - (void)post:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgPOST headers:headers body:nil completion:completionBlock];
 }
 
-- (void)post:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPOST headers:headers body:data success:successBlock failure:failureBlock];
-}
-
 - (void)post:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgPOST headers:headers body:data completion:completionBlock];
-}
-
-- (void)post:(NSString *)path headers:(NSDictionary *)headers postParams:(NSDictionary *)postParams success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPOST headers:headers postParams:postParams success:successBlock failure:failureBlock];
-}
-
-- (void)post:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPOST headers:nil body:data success:successBlock failure:failureBlock];
 }
 
 - (void)post:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgPOST headers:nil body:data completion:completionBlock];
 }
 
-- (void)post:(NSString *)path postParams:(NSDictionary *)postParams success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgPOST headers:nil postParams:postParams success:successBlock failure:failureBlock];
-}
-
-- (void)delete:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgDELETE success:successBlock failure:failureBlock];    
-}
-
 - (void)delete:(NSString *)path completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgDELETE headers:nil body:nil completion:completionBlock];
-}
-
-- (void)delete:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgDELETE headers:headers success:successBlock failure:failureBlock];
 }
 
 - (void)delete:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgDELETE headers:headers body:nil completion:completionBlock];
 }
 
-- (void)delete:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgDELETE headers:headers body:data success:successBlock failure:failureBlock];
-}
-
 - (void)delete:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgDELETE headers:headers body:data completion:completionBlock];
-}
-
-- (void)delete:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgDELETE headers:nil body:data success:successBlock failure:failureBlock];
 }
 
 - (void)delete:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgDELETE headers:nil body:data completion:completionBlock];
 }
 
-- (void)head:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgHEAD success:successBlock failure:failureBlock];
-}
-
 - (void)head:(NSString *)path completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgHEAD headers:nil body:nil completion:completionBlock];
-}
-
-- (void)head:(NSString *)path headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgHEAD headers:headers success:successBlock failure:failureBlock];
 }
 
 - (void)head:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgHEAD headers:headers body:nil completion:completionBlock];
 }
 
-- (void)head:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgHEAD headers:headers body:data success:successBlock failure:failureBlock];
-}
-
 - (void)head:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgHEAD headers:headers body:data completion:completionBlock];
-}
-
-- (void)head:(NSString *)path body:(NSData *)data success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgHEAD headers:nil body:data success:successBlock failure:failureBlock];
 }
 
 - (void)head:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgHEAD headers:nil body:data completion:completionBlock];
 }
 
-- (void)call:(NSString *)path success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:kApgGET headers:nil body:nil success:successBlock failure:failureBlock];
-}
-
 - (void)call:(NSString *)path completion:(APGResponseBlock)completionBlock {
     [self call:path verb:kApgGET headers:nil body:nil completion:completionBlock];
-}
-
-- (void)call:(NSString *)path verb:(NSString *)verb success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:verb headers:nil body:nil success:successBlock failure:failureBlock];
 }
 
 - (void)call:(NSString *)path verb:(NSString *)verb completion:(APGResponseBlock)completionBlock {
     [self call:path verb:verb headers:nil body:nil completion:completionBlock];
 }
 
-- (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:verb headers:headers body:nil success:successBlock failure:failureBlock];
-}
-
 - (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock {
     [self call:path verb:verb headers:headers body:nil completion:completionBlock];
-}
-
-- (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers postParams:(NSDictionary *)postParams success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:verb headers:headers postParams:postParams success:successBlock failure:failureBlock];
-}
-
-- (void)call:(NSString *)path verb:(NSString *)verb postParams:(NSDictionary *)postParams success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:verb headers:nil postParams:postParams success:successBlock failure:failureBlock];
-}
-
-- (void)call:(NSString *)path verb:(NSString *)verb body:(NSData *)body success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    [self call:path verb:verb headers:nil body:body success:successBlock failure:failureBlock];
 }
 
 - (void)call:(NSString *)path verb:(NSString *)verb body:(NSData *)body completion:(APGResponseBlock)completionBlock {
@@ -425,30 +299,6 @@ static char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012
     
     NSURL *url = [NSURL URLWithString:urlString];
     return url;
-}
-
-- (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers body:(NSData *)body success:(ApigeeRequestBlock)successBlock failure:(ApigeeRequestBlock)failureBlock {
-    NSURL *url = [self URLForPath:path];
-    __block APGRequest *request = [APGRequest request:url verb:verb headers:headers body:body];
-    if (self.username) {
-        [request setUsername:self.username];
-    }
-    if (self.password) {
-        [request setPassword:self.password];
-    }
-    request.delegate = self;
-    request.requestMethod = verb;
-    [request setCompletionBlock:^{
-        if ([request isSuccess]) {
-            successBlock(request);
-        } else {
-            failureBlock(request);
-        }
-    }];
-    [request setFailedBlock:^{
-        failureBlock(request);
-    }];    
-    [request startAsynchronous];
 }
 
 - (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers body:(NSData *)body completion:(APGResponseBlock)completionBlock {
