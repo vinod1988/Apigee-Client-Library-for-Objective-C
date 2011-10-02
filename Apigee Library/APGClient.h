@@ -19,8 +19,8 @@
 typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSError *error);
 
 /**
- The APGClient class provides a simple way to talk to your APIs through the
- Apigee proxy.  It provides several convenience methods to create HTTP requests
+ The APGClient class provides a simple way to talk to your APIs through 
+ Apigee.  It provides several convenience methods to create HTTP requests
  and send them. 
  */
 @interface APGClient : NSObject
@@ -32,7 +32,11 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 
 #if TARGET_OS_IPHONE
 
+/**
+ */
 @property (nonatomic, retain) APGLoginViewController *loginViewController;
+
+
 - (void)presentLoginForProvider:(NSString *)provider fromViewController:(UIViewController *)fromViewController;
 
 #endif
@@ -74,7 +78,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (NSURL *)URLForPath:(NSString *)path;
 
 /**
- Performs an HTTP GET request to the specified path on the Apigee proxy
+ Performs an HTTP GET request to the specified path 
  @param path Path to the resource.
 
  <b>Example Usage</b>
@@ -87,7 +91,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)get:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP GET request to the specified path on the Apigee proxy
+ Performs an HTTP GET request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -103,7 +107,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)get:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP GET request to the specified path on the Apigee proxy
+ Performs an HTTP GET request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -119,7 +123,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)get:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP GET request to the specified path on the Apigee proxy
+ Performs an HTTP GET request to the specified path 
  @param path Path to the resource
  @param data HTTP body
  
@@ -133,7 +137,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)get:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP PUT request to the specified path on the Apigee proxy
+ Performs an HTTP PUT request to the specified path 
  @param path Path to the resource.
  
  <b>Example Usage</b>
@@ -146,7 +150,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)put:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP PUT request to the specified path on the Apigee proxy
+ Performs an HTTP PUT request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -162,7 +166,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)put:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP PUT request to the specified path on the Apigee proxy
+ Performs an HTTP PUT request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -179,7 +183,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)put:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP PUT request to the specified path on the Apigee proxy
+ Performs an HTTP PUT request to the specified path 
  @param path Path to the resource
  @param data HTTP body
  
@@ -193,7 +197,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)put:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP POST request to the specified path on the Apigee proxy
+ Performs an HTTP POST request to the specified path 
  @param path Path to the resource
  
  <b>Example Usage</b>
@@ -206,7 +210,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)post:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP POST request to the specified path on the Apigee proxy
+ Performs an HTTP POST request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -221,7 +225,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)post:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP POST request to the specified path on the Apigee proxy
+ Performs an HTTP POST request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -237,7 +241,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)post:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP POST request to the specified path on the Apigee proxy
+ Performs an HTTP POST request to the specified path 
  @param path Path to the resource
  @param data HTTP body
  
@@ -251,7 +255,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)post:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP DELETE request to the specified path on the Apigee proxy
+ Performs an HTTP DELETE request to the specified path 
  @param path Path to the resource
  
  <b>Example Usage</b>
@@ -264,7 +268,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)delete:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP DELETE request to the specified path on the Apigee proxy
+ Performs an HTTP DELETE request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -279,7 +283,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)delete:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP DELETE request to the specified path on the Apigee proxy
+ Performs an HTTP DELETE request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -295,7 +299,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)delete:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP DELETE request to the specified path on the Apigee proxy
+ Performs an HTTP DELETE request to the specified path 
  @param path Path to the resource
  @param data HTTP body
  
@@ -309,7 +313,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)delete:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP HEAD request to the specified path on the Apigee proxy
+ Performs an HTTP HEAD request to the specified path 
  @param path Path to the resource
  
  <b>Example Usage</b>
@@ -322,7 +326,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)head:(NSString *)path completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP HEAD request to the specified path on the Apigee proxy
+ Performs an HTTP HEAD request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -337,7 +341,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)head:(NSString *)path headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP HEAD request to the specified path on the Apigee proxy
+ Performs an HTTP HEAD request to the specified path 
  @param path Path to the resource
  @param headers Dictionary of HTTP headers where the keys are the header names and
  the values are the header values
@@ -354,7 +358,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)head:(NSString *)path headers:(NSDictionary *)headers body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP HEAD request to the specified path on the Apigee proxy
+ Performs an HTTP HEAD request to the specified path 
  @param path Path to the resource
  @param data HTTP body
  
@@ -368,7 +372,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)head:(NSString *)path body:(NSData *)data completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP request to the specified path on the Apigee proxy
+ Performs an HTTP request to the specified path 
  @param path Path to the resource
  @param verb The HTTP method (e.g. GET, PUT, POST, etc.)
  
@@ -382,7 +386,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)call:(NSString *)path verb:(NSString *)verb completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP request to the specified path on the Apigee proxy
+ Performs an HTTP request to the specified path 
  @param path Path to the resource
  @param verb The HTTP method (e.g. GET, PUT, POST, etc.)
  @param headers Dictionary of HTTP headers where the keys are the header names and
@@ -398,7 +402,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)call:(NSString *)path verb:(NSString *)verb headers:(NSDictionary *)headers completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP request to the specified path on the Apigee proxy
+ Performs an HTTP request to the specified path 
  @param path Path to the resource
  @param verb The HTTP method (e.g. GET, PUT, POST, etc.)
  @param body HTTP body
@@ -413,7 +417,7 @@ typedef void (^APGResponseBlock)(NSHTTPURLResponse *response, NSData *data, NSEr
 - (void)call:(NSString *)path verb:(NSString *)verb body:(NSData *)body completion:(APGResponseBlock)completionBlock;
 
 /**
- Performs an HTTP request to the specified path on the Apigee proxy
+ Performs an HTTP request to the specified path 
  @param path Path to the resource
  @param verb The HTTP method (e.g. GET, PUT, POST, etc.)
  @param headers Dictionary of HTTP headers where the keys are the header names and

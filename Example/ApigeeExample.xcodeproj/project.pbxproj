@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		272F76111435940200633B8E /* APGClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F76031435940200633B8E /* APGClient.m */; };
-		272F76131435940200633B8E /* APGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F76051435940200633B8E /* APGConstants.m */; };
 		272F76171435940200633B8E /* APGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F76091435940200633B8E /* APGKeychain.m */; };
 		272F76191435940200633B8E /* APGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F760B1435940200633B8E /* APGLoginViewController.m */; };
 		272F761D1435940200633B8E /* APGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F760F1435940200633B8E /* APGUser.m */; };
@@ -31,7 +30,6 @@
 		272F76021435940200633B8E /* APGClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGClient.h; path = "../Apigee Library/APGClient.h"; sourceTree = "<group>"; };
 		272F76031435940200633B8E /* APGClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGClient.m; path = "../Apigee Library/APGClient.m"; sourceTree = "<group>"; };
 		272F76041435940200633B8E /* APGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGConstants.h; path = "../Apigee Library/APGConstants.h"; sourceTree = "<group>"; };
-		272F76051435940200633B8E /* APGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGConstants.m; path = "../Apigee Library/APGConstants.m"; sourceTree = "<group>"; };
 		272F76081435940200633B8E /* APGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGKeychain.h; path = "../Apigee Library/APGKeychain.h"; sourceTree = "<group>"; };
 		272F76091435940200633B8E /* APGKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APGKeychain.m; path = "../Apigee Library/APGKeychain.m"; sourceTree = "<group>"; };
 		272F760A1435940200633B8E /* APGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = APGLoginViewController.h; path = "../Apigee Library/APGLoginViewController.h"; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				272F76021435940200633B8E /* APGClient.h */,
 				272F76031435940200633B8E /* APGClient.m */,
 				272F76041435940200633B8E /* APGConstants.h */,
-				272F76051435940200633B8E /* APGConstants.m */,
 				272F76081435940200633B8E /* APGKeychain.h */,
 				272F76091435940200633B8E /* APGKeychain.m */,
 				272F760A1435940200633B8E /* APGLoginViewController.h */,
@@ -235,7 +232,6 @@
 				27BFC293142A54DD004CA304 /* RootViewController.m in Sources */,
 				27BFC2DA142A64A2004CA304 /* JSONKit.m in Sources */,
 				272F76111435940200633B8E /* APGClient.m in Sources */,
-				272F76131435940200633B8E /* APGConstants.m in Sources */,
 				272F76171435940200633B8E /* APGKeychain.m in Sources */,
 				272F76191435940200633B8E /* APGLoginViewController.m in Sources */,
 				272F761D1435940200633B8E /* APGUser.m in Sources */,

@@ -9,11 +9,20 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ */
 @interface APGLoginViewController : UIViewController <UIWebViewDelegate>
 
+/**
+ */
 @property (nonatomic, retain) NSURL *url;
+
+/**
+ */
 @property (nonatomic, retain) UIWebView *webView;
 
+/**
+ */
 - (id)initWithURL:(NSURL *)url;
 
 @end
